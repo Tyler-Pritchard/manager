@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { emailChanged } from '../actions';
+import { emailChanged, passwordChanged } from '../actions';
 import { Card, CardSection, Input, Button } from './common';
 
 class LoginForm extends Component {
     onEmailChange(text) {
         this.props.emailChanged(text);
     }
+
+    onPasswordChange(text) {
+        this.props.onPasswordChange(text);
+    }
+
     render() {
         return (
             <Card>
@@ -24,6 +29,7 @@ class LoginForm extends Component {
                         secureTextEntry
                         label="Password"
                         placeholder="password"
+                        onChangeText={this.onPasswordChange.bind(this)}
                         />    
                 </CardSection>
 
