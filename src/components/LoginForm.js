@@ -12,6 +12,12 @@ class LoginForm extends Component {
         this.props.passwordChanged(text);
     }
 
+    onButtonPress() {
+        const { email, password } = this.props;
+
+        this.props.loginUser({ email, password })
+    }
+
     render() {
         return (
             <Card>
