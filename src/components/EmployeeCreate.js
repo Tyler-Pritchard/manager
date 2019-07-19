@@ -1,4 +1,5 @@
 import React, { Component } from  'react';
+import { Picker } from 'react-native';
 import { connect } from 'react-redux';
 import { employeeUpdate } from '../actions';
 import { Card, CardSection, Input, Button } from './common';
@@ -26,6 +27,13 @@ class EmployeeCreate extends  Component {
                 </CardSection>
 
                 <CardSection>
+                    <Picker.Item label="Monday" value="Monday" />
+                    <Picker.Item label="Tuesday" value="Tuesday" />
+                    <Picker.Item label="Wednesday" value="Wednesday" />
+                    <Picker.Item label="Thursday" value="Thursday" />
+                    <Picker.Item label="Friday" value="Friday" />
+                    <Picker.Item label="Saturday" value="Saturday" />
+                    <Picker.Item label="Sunday" value="Sunday" />
                 </CardSection>
 
                 <CardSection>
