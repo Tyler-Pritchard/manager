@@ -16,4 +16,4 @@ class EmployeeList extends Component {
     }
 }
 
-explort default EmployeeList;
+export default EmployeeList;
