@@ -22,9 +22,7 @@ const styles = {
         elevation: 1,
         marginLeft: 5,
         marginRight: 5,
-        marginTop: 30,
-        paddingTop: 35,
-    }
+        marginTop: 20    }
 }
 
 export { Card };
