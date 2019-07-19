@@ -9,6 +9,7 @@
   "dependencies": {
     "core-js": "^3",
     "firebase": "^6.3.0",
+    "flow": "^0.2.3",
     "react": "^16.8.6",
     "react-native": "^0.60.3",
     "react-native-cli": "^2.0.1",
@@ -28,5 +29,9 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/Tyler-Pritchard/manager.git",
+  "author": "Tyler-Pritchard <pritchard.tyler@gmail.com>",
+  "license": "MIT"
 }
