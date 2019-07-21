@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { Text, TouchableWithoutFeedback, View } from 'react-native';
 import { CardSection } from  './common';
 
 class ListItem extends Component {
@@ -7,11 +7,15 @@ class ListItem extends Component {
         const { name } = this.props.employee;
 
         return(
-            <CardSection>
-                <Text style={style.titleStyles}>
-                    {name}
-                </Text>
-            </CardSection>
+            <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
+                <View>
+                    <CardSection>
+                        <Text style={style.titleStyles}>
+                            {name}
+                        </Text>
+                    </CardSection>
+                </View>
+            </TouchableWithoutFeedback>
         );
     };
 };
