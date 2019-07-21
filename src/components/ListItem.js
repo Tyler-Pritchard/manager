@@ -8,7 +8,7 @@ class ListItem extends Component {
 
         return(
             <CardSection>
-                <Text style={styles.titleStyles}>
+                <Text style={style.titleStyles}>
                     {name}
                 </Text>
             </CardSection>
@@ -16,11 +16,11 @@ class ListItem extends Component {
     };
 };
 
-const styles = {
+const style = {
     titleStyles: {
         fontSize: 18,
         paddingLeft: 15,
     }
-}
+};
 
 export default ListItem;
