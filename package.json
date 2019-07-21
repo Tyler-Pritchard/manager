@@ -10,6 +10,7 @@
     "core-js": "^3",
     "firebase": "^6.3.0",
     "flow": "^0.2.3",
+    "lodash": "^4.17.15",
     "react": "^16.8.6",
     "react-native": "^0.60.3",
     "react-native-cli": "^2.0.1",
