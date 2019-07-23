@@ -6,22 +6,55 @@ import  { employeesFetch } from '../actions';
 import ListItem from './ListItem';
 
 class EmployeeList extends Component {
-    componentDidMount() {
+    UNSAFE_componentWillMount() {
         this.props.employeesFetch();
+
+        this.createDataSource(this.props);
     }
 
-    componentDidUpdate(prevProps) {
-        if( prevProps.employee.length !== this.props.employees.length) {
-            this.props.employeesFetch();
-        }
+    componentWillReceiveProps(nextProps) {
+        this.createDataSource(nextProps);
+    }
+//comment code
+        // componentDidMount() {
+        //     this.props.employeesFetch();
+        // }
+    
+        // componentDidUpdate(prevProps) {
+        //     if( prevProps.employee.length !== this.props.employees.length) {
+        //         this.props.employeesFetch();
+        //     }
+        // }
+// end
+    createDataSource({ employees }) {
+        const ds = new FlatList.DataSource({ 
+            rowHasChanged: (r1, r2) => r1 !== r2
+        });
+
+        this.dataSource = ds.cloneWithRows(employees);
     }
 
-    render() {
-        return (
-            <FlatList data={this.props.employees} renderItem={({item}) => <ListItem employee={item}/>} />
-        )
+    renderRow(employee) {
+        return <ListItem employee={employee} />
     }
-}
+
+     render() {
+         return (
+            <FlatList
+                enableEmptySections
+                dataSource={this.dataSource}
+                renderRow={this.renderRow}
+            />
+            );
+     }
+
+
+//     render() {
+//         return (
+//             <FlatList data={this.props.employees} renderItem={({item}) => <ListItem employee={item}/>} />
+//         )
+//     }
+ }
 
 const mapStateToProps = state => {
     const employees = _.map(state.employees, (val, uid) => {
